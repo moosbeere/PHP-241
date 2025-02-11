@@ -11,7 +11,10 @@
 <body>
 <h1>Hello, World!</h1>
     <p>
-        <?php echo date("l"); ?>
+        <?php echo date("l"); ?> 
+
+      </br>
+      
         <?= date("l"); ?>
     </p>
 </body>
