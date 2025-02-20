@@ -1,5 +1,179 @@
 <?php
 
+class Article{
+    private $title;
+    private $text;
+    private $author;
+
+    public function __construct(string $title, string $text, User $author)
+    {
+        $this->title = $title;
+        $this->text = $text;
+        $this->author = $author;
+    }
+
+    public function setTitle(string $title){
+        $this->title = $title;
+    }
+    public function setText(string $text){
+        $this->text = $text;
+    }
+    public function setAuthor(User $author){
+        $this->author = $author;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+    public function getText(): string
+    {
+        return $this->text;
+    }
+    public function getAuthor(): User
+    {
+        return $this->author;
+    }
+}
+
+class User{
+    private $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function setName(string $name){
+        $this->name = $name;
+    }
+    public function getName(): string
+    {
+        return $this->name;
+    }
+}
+
+class Cat {
+    private $name;
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+}
+
+class Admin extends User{
+    private $role;
+
+    public function __construct(string $name, string $role)
+    {
+        parent::__construct($name);
+        $this->role = $role;
+    }
+}
+
+$admin = new Admin("Sergey", 'admin');
+$cat = new Cat('murka');
+$user = new User('ivan');
+$article = new Article('article1', 'loram ipsum', $admin);
+
+echo $article->getAuthor()->getName();
+// var_dump($article);
+
+
+// class A {
+//     public static $x;
+
+//     public static function test(int $x){
+//         echo $x;
+//     }
+//     public function getX(){
+//         return self::$x;
+//     }
+// }
+
+// A::$x = 5;
+// echo A::$x.'<BR>';
+// $y = new A;
+// //$y->x = 7;
+// // echo '<BR>'.$y->x; нельзя обращаться к статическим свойствам и методам класса от объекта данного классса
+// echo $y::$x.'<BR>';
+// echo $y->getX().'<BR>';
+// // A::test(6);
+
+// class User{
+//     private $role;
+//     private $name;
+//     public function __construct(string $role, string $name)
+//     {
+//         $this->role = $role;
+//         $this->name = $name;
+//     }
+
+//     public static function createAdmin(string $name){
+//         return new self('admin', $name);
+//     }
+// }
+
+// $user = User::createAdmin('Ivan');
+// var_dump($user);
+
+
+// class Human{
+//     public static $count = 0;
+
+//     public function __construct()
+//     {
+//         self::$count++;
+//     }
+
+//     public static function getCount(){
+//         return self::$count;
+//     }
+// }
+
+
+// $men1 = new Human();
+// $men2 = new Human();
+// $men3 = new Human();
+// $men4 = new Human();
+
+// echo '<BR>'.Human::getCount();
+
+
+
+// abstract class AbstractClass{
+//     public abstract function getValue();
+
+//     public function printValue(){
+//         echo $this->getValue();
+//     }
+// }
+
+// // $abstract = new AbstractClass; ошибка
+
+// class ClassA extends AbstractClass
+// {
+//     private $val;
+//     public function __construct(int $val)
+//     {   
+//         $this->val = $val;
+//     }
+//     public function getValue(){
+//         return $this->val;
+//     }
+// }
+
+// $ob = new ClassA(5);
+// $ob->printValue();
+
+
+
+
+
+
+
+
+
 // class A {
 //     public function sayHello(){
 //         return 'Hello. I`m A';
