@@ -1,82 +1,27 @@
-<?php
+// class Cat {
+//     private $name;
+//     public function __construct(string $name)
+//     {
+//         $this->name = $name;
+//     }
+// }
 
-class Article{
-    private $title;
-    private $text;
-    private $author;
+// class Admin extends User{
+//     private $role;
 
-    public function __construct(string $title, string $text, User $author)
-    {
-        $this->title = $title;
-        $this->text = $text;
-        $this->author = $author;
-    }
+//     public function __construct(string $name, string $role)
+//     {
+//         parent::__construct($name);
+//         $this->role = $role;
+//     }
+// }
 
-    public function setTitle(string $title){
-        $this->title = $title;
-    }
-    public function setText(string $text){
-        $this->text = $text;
-    }
-    public function setAuthor(User $author){
-        $this->author = $author;
-    }
+// $admin = new Admin("Sergey", 'admin');
+// $cat = new Cat('murka');
+// $user = new User('ivan');
+// $article = new Article('article1', 'loram ipsum', $admin);
 
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-    public function getText(): string
-    {
-        return $this->text;
-    }
-    public function getAuthor(): User
-    {
-        return $this->author;
-    }
-}
-
-class User{
-    private $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
-
-    public function setName(string $name){
-        $this->name = $name;
-    }
-    public function getName(): string
-    {
-        return $this->name;
-    }
-}
-
-class Cat {
-    private $name;
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
-}
-
-class Admin extends User{
-    private $role;
-
-    public function __construct(string $name, string $role)
-    {
-        parent::__construct($name);
-        $this->role = $role;
-    }
-}
-
-$admin = new Admin("Sergey", 'admin');
-$cat = new Cat('murka');
-$user = new User('ivan');
-$article = new Article('article1', 'loram ipsum', $admin);
-
-echo $article->getAuthor()->getName();
+// echo $article->getAuthor()->getName();
 // var_dump($article);
 
 
@@ -359,4 +304,4 @@ echo $article->getAuthor()->getName();
     // }
 
 
-
+ -->
