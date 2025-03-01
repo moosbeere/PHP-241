@@ -15,10 +15,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?=$_SERVER['SCRIPT_NAME'];?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/hello/olga">Hello</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/say/olga">Hello</a>
         </li>
       </ul>
     </div>
