@@ -62,7 +62,7 @@ echo "min = $min";
     if ($x < 0) {   
         $y = -$x;
     }
-    elseif ($x >= 0 && $x < 2) $y = pow($x, 2);
+    // elseif ($x >= 0 && $x < 2) $y = pow($x, 2);
     elseif ($x >= 2 && $x < 5) $y = $x + 2;
     else $y = 7;
 

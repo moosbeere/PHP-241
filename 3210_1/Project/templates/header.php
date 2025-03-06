@@ -20,13 +20,10 @@
         <li class="nav-item">
           <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/hello/olga">Hello</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/say/olga">Hello</a>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
 </header>
 <main>
-    <div class="container">
+    <div class="container mt-3">

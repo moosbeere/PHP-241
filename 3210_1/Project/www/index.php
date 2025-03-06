@@ -8,6 +8,7 @@
     $findRoute = false;
     
     $route = $_GET['route'] ?? '';
+    // var_dump($route);
     $patterns = require 'route.php';
     foreach ($patterns as $pattern=>$controllerAndAction){
         preg_match($pattern, $route, $matches);

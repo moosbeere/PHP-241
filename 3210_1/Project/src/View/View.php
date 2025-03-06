@@ -13,6 +13,6 @@ class View{
     public function renderHtml(string $templateName, $vars=[])
     {
         extract($vars);
-        include $this->templatesPath.'/'.$templateName;
+        include $this->templatesPath.'/'.$templateName.'.php';
     }
 }

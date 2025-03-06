@@ -1,21 +1,23 @@
 <?php
     require dirname(__DIR__).'../header.php';
-    echo "<h1>Главная старница</h1>";
+    // echo "<h1>Главная старница</h1>";
 ?>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Text</th>
+      <th scope="col">Author</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach($articles as $key=>$value):?>
     <tr>
-      <th scope="row">1</th>
-      <td><?=$key;?></td>
-      <td><?=$value;?></td>
+      <th scope="row"><?=$value['id'];?></th>
+      <td><a href="<?=dirname($_SERVER['SCRIPT_NAME']).'/article/'.$value['id'];?>"><?=$value['name'];?></a></td>
+      <td><?=$value['text'];?></td>
+      <td><?=$value['author_id'];?></td>
     </tr>
     <?php endforeach;?>
   </tbody>
