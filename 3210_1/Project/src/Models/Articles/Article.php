@@ -4,37 +4,35 @@ namespace src\Models\Articles;
 use src\Models\Users\User;
 
 class Article{
-    private $title;
+    private $id;
+    private $name;
     private $text;
-    private $author;
+    private $authorId;
+    private $createdAt;
 
-    public function __construct(string $title, string $text, User $author)
+    public function __set($name, $value)
     {
-        $this->title = $title;
-        $this->text = $text;
-        $this->author = $author;
-    }
-
-    public function setTitle(string $title){
-        $this->title = $title;
-    }
-    public function setText(string $text){
-        $this->text = $text;
-    }
-    public function setAuthor(User $author){
-        $this->author = $author;
+        $camelCaseName = $this->underscoreToCamelcase($name);
+        $this->$camelCaseName = $value;
     }
 
-    public function getTitle(): string
+    private function underscoreToCamelcase(string $name): string
     {
-        return $this->title;
+        return lcfirst(str_replace('_','',ucwords($name, '_')));
     }
-    public function getText(): string
-    {
+
+    public function getId(){
+        return $this->id;
+    }
+    public function getName(){
+        return $this->name;
+    }
+    public function getText(){
         return $this->text;
     }
-    public function getAuthor(): User
+    public function getAuthorId(): User
     {
-        return $this->author;
+        return $this->authorId;
     }
+
 }
