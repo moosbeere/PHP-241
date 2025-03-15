@@ -4,8 +4,9 @@
 
     class Db{
         private $pdo;
+        private static $instance;
 
-        public function __construct()
+        private function __construct()
         {
             $dbOptions = require('settings.php');
 
@@ -24,6 +25,13 @@
                 return null;
             }
             return $sth->fetchAll(\PDO::FETCH_CLASS, $className);
+        }
+
+        public static function getInstance(){
+            if (static::$instance === null){
+                static::$instance = new self();
+            }
+            return static::$instance;
         }
     }
 

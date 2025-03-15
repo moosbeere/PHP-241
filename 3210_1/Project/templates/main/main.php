@@ -17,7 +17,7 @@
       <th scope="row"><?=$article->getId();?></th>
       <td><a href="<?=dirname($_SERVER['SCRIPT_NAME']).'/article/'.$article->getId();?>"><?=$article->getName();?></a></td>
       <td><?=$article->getText();?></td>
-      <td><?=$article->getAuthorId();?></td>
+      <td><?=$article->getAuthorId()->getNickName();?></td>
     </tr>
     <?php endforeach;?>
   </tbody>
