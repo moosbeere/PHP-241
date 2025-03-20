@@ -36,5 +36,19 @@
             $result = $db->query($sql, [':id'=>$id], static::class);
             return $result ? $result[0] : null;
         }
+
+        public function save()
+    {
+        if ($this->getId()) $this->update();
+        else $this->insert();
+    }
+
+    private function update(){
+        echo 'update';
+    }
+
+    private function insert(){
+        echo 'insert'; 
+    }
         abstract protected static function getTableName(): string;
     }
