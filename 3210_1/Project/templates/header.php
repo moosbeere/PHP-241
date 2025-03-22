@@ -20,6 +20,9 @@
         <li class="nav-item">
           <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/hello/olga">Hello</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/article/create">Create article</a>
+        </li>
       </ul>
     </div>
   </div>

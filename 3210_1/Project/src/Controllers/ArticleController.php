@@ -2,7 +2,6 @@
 
 namespace src\Controllers;
 
-use ReflectionObject;
 use src\View\View;
 use src\Models\Articles\Article;
 
@@ -22,20 +21,24 @@ class ArticleController {
     public function show(int $id){
         
         $article = Article::getById($id);
-        // $reflector = new ReflectionObject($article);
-        // $properties = $reflector->getProperties();
-        // $propertiesName = [];
-        // foreach($properties as $property){
-        //     $propertiesName[]=$property->getName();
-        // }
-        // print_r($propertiesName);
-
-
         if ($article == null){
             $this->view->renderHtml('main/error', [], 404);
             return;
         }
         $this->view->renderHtml('article/show', ['article'=>$article]);
+    }
+
+    public function create(){
+        return $this->view->renderHtml('article/create');
+    }
+
+    public function store(){
+        $article = new Article;
+        $article->name = $_POST['name'];
+        $article->text = $_POST['text'];
+        $article->authorId = 1;
+        $article->save();
+        return header('Location:http://localhost/student-241/3210_1/Project/www/');
     }
 
     public function edit(int $id){
