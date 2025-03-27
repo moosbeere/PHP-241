@@ -2,6 +2,7 @@
 
 namespace src\Controllers;
 
+use Exceptions\NotFoundException;
 use src\View\View;
 use src\Models\Articles\Article;
 
@@ -22,8 +23,7 @@ class ArticleController {
         
         $article = Article::getById($id);
         if ($article == null){
-            $this->view->renderHtml('main/error', [], 404);
-            return;
+            throw new NotFoundException();
         }
         $this->view->renderHtml('article/show', ['article'=>$article]);
     }
@@ -43,14 +43,29 @@ class ArticleController {
 
     public function edit(int $id){
         $article = Article::getById($id);
+        if ($article == null){
+            throw new NotFoundException();
+        }
         return $this->view->renderHtml('/article/edit', ['article'=>$article]);
     }
 
     public function update(int $id){
         $article = Article::getById($id);
+        if ($article == null){
+            throw new NotFoundException();
+        }
         $article->setName($_POST['name']);
         $article->setText($_POST['text']);
         $article->save();
         return $this->view->renderHtml('article/show', ['article'=>$article]);
+    }
+
+    public function delete(int $id){
+        $article = Article::getById($id);
+        if ($article == null){
+            throw new NotFoundException();
+        }
+        $article->delete();
+        return header('Location:http://localhost/student-241/3210_1/Project/www/');
     }
 }
