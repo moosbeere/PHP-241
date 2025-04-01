@@ -1,0 +1,4 @@
+<?php
+function pow1($a, $b){
+    return pow($b, $a);
+}
