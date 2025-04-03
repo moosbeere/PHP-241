@@ -35,3 +35,13 @@
 
     func1();
     
+
+
+    <th scope="row"><?= $row['id'];?></th>
+      <td><?= $row['firstname'];?></td>
+      <td><?= $row['name'];?></td>
+      <td><?= $row['lastname'];?></td>
+      <td><?= $row['date'];?></td>
+      <td><?= $row['email'];?></td>
+      <td><?= $row['phone'];?></td>
+      <td><?= $row['comment'];?></td>
