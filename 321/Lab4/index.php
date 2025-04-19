@@ -17,6 +17,15 @@
 // echo '#x.x#<BR>';
 // echo preg_replace('#x.x#', '!', 'xax xsx x&x x x xaax');
 
-$str = 'xx xax xaax xaaax xbx';
-echo "<BR>$str<BR>";
-echo preg_replace('#xa?x#', '!', $str);
+// $str = 'xx xax xaax xaaax xbx';
+// echo "<BR>$str<BR>";
+// echo preg_replace('#xa?x#', '!', $str);
+
+$str = '\\ \\ \\\\';
+$pattern = '/\\\\/';
+echo $str."<BR>";
+echo $pattern.'<BR>';
+echo preg_replace($pattern, '!', $str);
+echo '<BR>';
+// echo preg_replace('#[а-яА-ЯЁё]яя#u', '!', 'аяя ёяя 2яя');
+
