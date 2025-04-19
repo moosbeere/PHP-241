@@ -9,13 +9,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Hello, World!</h1>
-    <p>
-        <?php echo date("l"); ?> 
-
-      </br>
-      
-        <?= date("l"); ?>
-    </p>
+<h1>Hello-Bootstrap</h1>
+<?php echo 'Hello';?>
+<?='Hello';?>
+<form action="https://httpbin.org/post" method="post">
+    <label for="name">Enter your name</label>
+    <input type="text" name="name" id="name">
+    <label for="email">Enter your email</label>
+    <input type="email"  name="email" id="email">
+    <button type="submit">Save</button>
+</form>
 </body>
 </html>
