@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models\Articles;
+use src\Models\Users\User;
 
 class Article{
         protected $title;

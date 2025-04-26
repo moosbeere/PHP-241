@@ -21,11 +21,20 @@
 // echo "<BR>$str<BR>";
 // echo preg_replace('#xa?x#', '!', $str);
 
-$str = '\\ \\ \\\\';
-$pattern = '/\\\\/';
-echo $str."<BR>";
-echo $pattern.'<BR>';
-echo preg_replace($pattern, '!', $str);
-echo '<BR>';
+// $str = 'xaaa baaa';
+// $pattern = '/(?<!x)aaa/';
+// echo $str."<BR>";
+// // echo $pattern.'<BR>';
+// echo '<BR>';
+// echo preg_replace($pattern, '!', $str);
+// echo '<BR>';
+// echo $matches[1];
 // echo preg_replace('#[а-яА-ЯЁё]яя#u', '!', 'аяя ёяя 2яя');
+
+
+echo preg_replace_callback('/(\d)\+(\d)=/', 'sum', '2+3=');
+function sum($matches){
+    // return $matches[1]+$matches[2];
+    var_dump($matches);
+}
 
