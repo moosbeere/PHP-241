@@ -2,8 +2,10 @@
 
 namespace src\Models\Users;
 
-class User{
-    protected $id;
+use src\Models\ActiveRecordEntity;
+
+class User extends ActiveRecordEntity
+{
     protected $nickname;
     protected $email;
     protected $isConfirmed;
@@ -12,11 +14,18 @@ class User{
     protected $authToken;
     protected $createdAt;
 
+    
+    protected static function getTableName(){
+        return 'users';
+    }
+
     public function setName(string $nickname){
         $this->nickname = $nickname;
     }
-    public function getName(): string
+
+    public function getNickname(): string
     {
         return $this->nickname;
     }
+    
 }

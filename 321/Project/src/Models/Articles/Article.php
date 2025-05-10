@@ -1,14 +1,19 @@
 <?php
 
 namespace src\Models\Articles;
+use src\Models\ActiveRecordEntity;
 use src\Models\Users\User;
 
-class Article{
-        protected $id;
+class Article extends ActiveRecordEntity
+{
         protected $title;
         protected $text;
         protected $authorId;
         protected $createdAt;
+
+        protected static function getTableName(){
+            return 'articles';
+        }
 
         public function setTitle(string $title){
             $this->title = $title;
@@ -27,8 +32,12 @@ class Article{
         {
             return $this->text;
         }
-        public function getAuthor()
+        public function getAuthorId() :User
         {
-            return $this->authorId;
+            return User::getById($this->authorId);
+        }
+        public function getCreatedAt()
+        {
+            return $this->createdAt;
         }
     }

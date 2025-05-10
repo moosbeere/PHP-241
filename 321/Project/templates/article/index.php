@@ -13,10 +13,10 @@
     <?php foreach($articles as $article):?> 
     <tr>
       <th scope="row">1</th>
-      <td><?=$article['created_at'];?></td>
-      <td><a href="<?=$_SERVER['REQUEST_URI']?>article/<?=$article['id'];?>"><?=$article['title'];?></a></td>
-      <td><?=$article['text'];?></td>
-      <td><?=$article['author_id'];?></td>
+      <td><?=$article->getCreatedAt();?></td>
+      <td><a href="<?=dirname($_SERVER['REQUEST_URI'])?>/article/<?=$article->getId();?>"><?=$article->getTitle();?></a></td>
+      <td><?=$article->getText();?></td>
+      <td><?=$article->getAuthorId()->getNickname();?></td>
     </tr>
     <?php endforeach;?>
   </tbody>
